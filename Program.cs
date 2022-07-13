@@ -140,18 +140,26 @@ internal class Program
         int end = Convert.ToInt32(Console.ReadLine());
         int[] myArray = CreateRandomArray(num , start, end);
         ShowArray(myArray);
-        int sum = 0;
+        int min1 = myArray[0];
+        int max1 = myArray[0];
+        int result = 0;
+
         for (int i = 0; i < myArray.Length; i++)
         {
-            if (i % 2 == 0)
+            if (myArray[i] > max1)
             {
-                sum = sum + 0;
+                max1 = myArray[i];
             }
-            else
+            else if (myArray[i] < min1)
             {
-                sum = sum + myArray[i];
+                min1 = myArray[i];
             }
+                     
         }
-        Console.WriteLine($"Сумма элементов, стоящих на нечётных позициях: {sum}");
+        result = max1 - min1;
+        Console.WriteLine($"Разница между максимальным и минимальным элементами массива: {result}");
     }
 }
+
+        
+            
